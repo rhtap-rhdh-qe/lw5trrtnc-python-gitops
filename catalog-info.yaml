@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lw5trrtnc-python-gitops
+  description: This is GitOps manifest for lw5trrtnc-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=lw5trrtnc-python
+    backstage.io/kubernetes-id: lw5trrtnc-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lw5trrtnc-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lw5trrtnc-python
